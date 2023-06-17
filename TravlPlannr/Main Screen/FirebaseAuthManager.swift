@@ -13,6 +13,7 @@ extension ViewController {
         showActivityIndicator()
         Auth.auth().signIn(withEmail: email, password: password, completion: {(result, error) in
             if error == nil{
+                self.pushTravelDestinationScreen()
                 self.hideActivityIndicator()
             }else{
                 let invalidUserMsg = "Couldn't sign in with email and password given!"
@@ -42,6 +43,7 @@ extension ViewController {
         changeRequest?.commitChanges(completion: {(error) in
             if error == nil{
                 self.addToUserCollection(username: username, email: email)
+                self.pushTravelDestinationScreen()
                 self.hideActivityIndicator()
             }else{
                 let invalidUserMsg = "Couldn't register user!"

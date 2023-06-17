@@ -44,4 +44,10 @@ class ViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         self.present(alert, animated: true)
     }
+    
+    func pushTravelDestinationScreen() {
+        let travlDestinationsViewController = TravlDestinationsViewController()
+        travlDestinationsViewController.currentUser = Auth.auth().currentUser
+        navigationController?.pushViewController(travlDestinationsViewController, animated: true)
+    }
 }
