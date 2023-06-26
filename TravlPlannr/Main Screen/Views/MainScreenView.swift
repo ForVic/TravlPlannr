@@ -12,6 +12,7 @@ import UIKit
 class MainScreenView: UIView {
     var buttonLogin: UIButton!
     var buttonRegister: UIButton!
+    var travlPlannrLogo: UIImageView!
     
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -19,9 +20,18 @@ class MainScreenView: UIView {
         
         setupbuttonLogin()
         setupbuttonRegister()
+        setupTravlPlannrLogo()
         
         initConstraints()
     }
+    
+    func setupTravlPlannrLogo() {
+        travlPlannrLogo = UIImageView(image: UIImage(named: "travlPlannrLogo"))
+        travlPlannrLogo.sizeToFit()
+        travlPlannrLogo.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(travlPlannrLogo)
+    }
+    
     
     func setupbuttonLogin(){
         buttonLogin = UIButton(type: .system)
@@ -41,14 +51,20 @@ class MainScreenView: UIView {
     
     func initConstraints(){
         NSLayoutConstraint.activate([
-            buttonLogin.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 200),
+
+            travlPlannrLogo.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 6),
+            travlPlannrLogo.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
+            travlPlannrLogo.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor, constant: -6),
+            travlPlannrLogo.heightAnchor.constraint(equalToConstant: 200),
+
+            buttonLogin.topAnchor.constraint(equalTo: travlPlannrLogo.bottomAnchor, constant: 64),
             buttonLogin.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
-            
-            buttonRegister.topAnchor.constraint(equalTo: buttonLogin.safeAreaLayoutGuide.bottomAnchor, constant: 20),
+
+            buttonRegister.topAnchor.constraint(equalTo: buttonLogin.safeAreaLayoutGuide.bottomAnchor, constant: 32),
             buttonRegister.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
         ])
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

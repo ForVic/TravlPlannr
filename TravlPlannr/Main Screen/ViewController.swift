@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         mainScreenView.buttonRegister.addTarget(self, action: #selector(onRegisterTapped), for: .touchUpInside)
         mainScreenView.buttonLogin.addTarget(self, action: #selector(onLoginTapped), for: .touchUpInside)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: nil, action: nil)
         title = "TravlPlannr"
     }
     

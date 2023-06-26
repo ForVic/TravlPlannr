@@ -56,7 +56,8 @@ extension ViewController {
     func addToUserCollection(username: String, email: String) {
         self.database
             .collection(Configs.userCollectionName)
-            .addDocument(data: [
+            .document(email)
+            .setData([
                 Configs.userCollectionUsernameField: username,
                 Configs.userCollectionEmailField: email
             ])
