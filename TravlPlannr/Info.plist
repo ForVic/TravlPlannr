@@ -21,5 +21,11 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Required for functionality</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Required for functionality</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Required for functionality</string>
 </dict>
 </plist>

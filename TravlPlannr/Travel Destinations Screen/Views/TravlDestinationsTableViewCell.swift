@@ -7,7 +7,7 @@
 import UIKit
 
 class TravlDestinationsTableViewCell: UITableViewCell {
-    
+
     var wrapperCellView: UIView!
     var labelDestination: UILabel!
 
@@ -51,7 +51,10 @@ class TravlDestinationsTableViewCell: UITableViewCell {
             wrapperCellView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
             wrapperCellView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
 
-            wrapperCellView.heightAnchor.constraint(equalToConstant: 72)
+            wrapperCellView.heightAnchor.constraint(equalToConstant: 72),
+
+            labelDestination.centerYAnchor.constraint(equalTo: wrapperCellView.centerYAnchor),
+            labelDestination.leadingAnchor.constraint(equalTo: wrapperCellView.leadingAnchor, constant: 4)
         ])
     }
 
